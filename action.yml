@@ -32,7 +32,7 @@ runs:
     - name: Install GraphWalker ${{ inputs.graphwalker-version }}.
       shell: bash
       run: |
-        wget https://raw.githubusercontent.com/altwalker/graphwalker-installer/main/install-graphwalker.py
+        curl -O https://raw.githubusercontent.com/altwalker/graphwalker-installer/main/install-graphwalker.py
         python install-graphwalker.py ${{ inputs.graphwalker-version }}
     - name: Add GraphWalker to PATH
       shell: bash
