@@ -1,8 +1,26 @@
 on: [push]
 
 jobs:
-  test_ubuntu:
+  test-ubuntu:
     runs-on: ubuntu-latest
+
+    steps:
+      - uses: altwalker/setup-graphwalker@main
+      - name: Run GraphWalker
+        run: |
+          gw --version
+
+  test-macos:
+    runs-on: macos-latest
+
+    steps:
+      - uses: altwalker/setup-graphwalker@main
+      - name: Run GraphWalker
+        run: |
+          gw --version
+
+  test-windows:
+    runs-on: windows-latest
 
     steps:
       - uses: altwalker/setup-graphwalker@main
