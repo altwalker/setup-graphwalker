@@ -35,7 +35,7 @@ runs:
         curl -O https://raw.githubusercontent.com/altwalker/graphwalker-installer/main/install-graphwalker.py
         python install-graphwalker.py ${{ inputs.graphwalker-version }}
     - name: Add GraphWalker to PATH
-      shell: bash
+      shell: pwsh
       if: runner.os == 'Windows'
       run: |
-        echo "C:\Users\runneradmin\graphwalker" >> $env:GITHUB_PATH
+        "C:\Users\runneradmin\graphwalker" >> $env:GITHUB_PATH
