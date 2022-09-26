@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test_ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: altwalker/setup-graphwalker@main
+      - name: Run GraphWalker
+        run: |
+          gw --version

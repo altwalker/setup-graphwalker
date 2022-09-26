@@ -1,0 +1,41 @@
+name: 'Setup GraphWalker'
+description: 'Set up a specific version of GraphWalker command-line tools.'
+inputs:
+  python-version:
+    description: "Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset."
+    required: false
+    default: '3.10'
+  java-version:
+    description: 'The Java version to set up. Takes a whole or semver Java version.'
+    required: false
+    default: '17'
+  java-distribution:
+    description: 'Java distribution.'
+    required: false
+    default: 'zulu'
+  graphwalker-version:
+    description: 'Version range or exact version of GraphWalker to use, using SemVer's version range syntax.'
+    required: false
+    default: '4.3.1'
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Python ${{ inputs.python-version }}.
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ inputs.python-version }}
+    - name: Setup Java ${{ inputs.java-version }}.
+      uses: actions/setup-java@v3
+      with:
+        distribution: ${{ inputs.java-distribution }}
+        java-version: ${{ inputs.java-version }}
+    - name: Install GraphWalker ${{ inputs.graphwalker-version }}.
+      shell: bash
+      run: |
+        curl -L https://raw.githubusercontent.com/altwalker/graphwalker-installer/main/install-graphwalker.py
+        python install-graphwalker.py ${{ inputs.graphwalker-version }}
+    - name: Add GraphWalker to PATH
+      shell: bash
+      if: runner.os == 'Windows'
+      run: |
+        "C:\Users\runneradmin\graphwalker" >> $env:GITHUB_PATH
