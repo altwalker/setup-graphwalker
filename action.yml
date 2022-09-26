@@ -1,22 +1,22 @@
-name: 'Setup GraphWalker'
-description: 'Set up a specific version of GraphWalker command-line tools.'
+name: "Setup GraphWalker"
+description: "Set up a specific version of GraphWalker command-line tools."
 inputs:
   python-version:
     description: "Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset."
     required: false
-    default: '3.10'
+    default: "3.10"
   java-version:
-    description: 'The Java version to set up. Takes a whole or semver Java version.'
+    description: "The Java version to set up. Takes a whole or semver Java version."
     required: false
-    default: '17'
+    default: "17"
   java-distribution:
-    description: 'Java distribution.'
+    description: "Java distribution."
     required: false
-    default: 'zulu'
+    default: "zulu"
   graphwalker-version:
-    description: 'Version range or exact version of GraphWalker to use, using SemVer's version range syntax.'
+    description: "Version range or exact version of GraphWalker to use, using SemVer's version range syntax."
     required: false
-    default: '4.3.1'
+    default: "4.3.1"
 runs:
   using: "composite"
   steps:
