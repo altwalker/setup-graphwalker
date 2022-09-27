@@ -1,12 +1,12 @@
 # setup-graphwalker
 
-Set up your GitHub Actions workflow with a specific version of GraphWalker.
+Set up your GitHub Actions workflow with a specific version of [GraphWalker](https://graphwalker.github.io/) CLI.
 
 This action provides the following functionality for GitHub Actions users:
 
 * Installing a version of Python or PyPy
 * Installing a version of Java
-* Installing a version of GraphWalker and (by default) adding it to the `PATH`
+* Installing a version of GraphWalker CLI and (by default) adding it to the `PATH`
 
 ## Usage
 
