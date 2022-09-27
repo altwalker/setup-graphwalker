@@ -1,5 +1,5 @@
 name: "Setup GraphWalker"
-description: "Set up a specific version of GraphWalker command-line tools."
+description: "Set up a specific version of GraphWalker CLI."
 inputs:
   python-version:
     description: "Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset."
@@ -14,7 +14,7 @@ inputs:
     required: false
     default: "zulu"
   graphwalker-version:
-    description: "Version range or exact version of GraphWalker to use, using SemVer's version range syntax."
+    description: "Version range or exact version of GraphWalker to use, using SemVer's version syntax."
     required: false
     default: "4.3.1"
 runs:
