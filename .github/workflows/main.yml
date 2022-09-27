@@ -4,8 +4,15 @@ jobs:
   test-ubuntu:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        graphwalker-version: [ 'latest', '4.3.0', '' ]
+
     steps:
-      - uses: altwalker/setup-graphwalker@main
+      - name: Setup GraphWalker ${{ matrix.graphwalker-version }}
+        uses: altwalker/setup-graphwalker@main
+        with:
+          graphwalker-version: ${{ matrix.graphwalker-version }}
       - name: Run GraphWalker
         run: |
           gw --version
@@ -14,7 +21,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: altwalker/setup-graphwalker@main
+      - name: Setup GraphWalker
+        uses: altwalker/setup-graphwalker@main
       - name: Run GraphWalker
         run: |
           gw --version
@@ -23,7 +31,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: altwalker/setup-graphwalker@main
+      - name: Setup GraphWalker
+        uses: altwalker/setup-graphwalker@main
       - name: Run GraphWalker
         run: |
           gw --version
