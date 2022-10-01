@@ -1,5 +1,8 @@
 name: "Setup GraphWalker"
 description: "Set up a specific version of GraphWalker CLI."
+branding:
+  icon: "git-pull-request"
+  color: "orange"
 inputs:
   python-version:
     description: "Version range or exact version of Python or PyPy to use, using SemVer's version range syntax. Reads from .python-version if unset."
