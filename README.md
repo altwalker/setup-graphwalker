@@ -27,6 +27,17 @@ If you want to install the most up to date version of GraphWaker from the `maste
 
 See [action.yml](action.yml) for more details.
 
+### Community
+
+For help, discussion about best practices, sharing ideas, projects, or any other conversation that benefits from being searchable:
+
+* [Discuss AltWalker on GitHub](https://github.com/orgs/altwalker/discussions)
+* [Google Group](https://groups.google.com/g/altwalker)
+
+For casual chit-chat with us or with other members of the community: 
+
+* [Gitter Chat Room](https://groups.google.com/g/altwalker)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
